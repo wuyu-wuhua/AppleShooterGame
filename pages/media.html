@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppleShooter - Media</title>
+    <meta name="description" content="AppleShooter is an Apple Shooting Single Player game to play online for free. Games, Single player games, mini-games, apple, shooting">
+    <meta name="keywords" content="Games, Single player games, mini-games, apple, shooting">
+    <title>Media - an Apple Shooting Single Player game to play online for free. Games</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <span class="logo-letter" style="color: #ff6b6b">A</span>
-            <span class="logo-letter" style="color: #4ecdc4">p</span>
-            <span class="logo-letter" style="color: #45b7d1">p</span>
-            <span class="logo-letter" style="color: #96ceb4">l</span>
-            <span class="logo-letter" style="color: #ffeead">e</span>
-            <span class="logo-letter" style="color: #ff6b6b">S</span>
-            <span class="logo-letter" style="color: #4ecdc4">h</span>
-            <span class="logo-letter" style="color: #45b7d1">o</span>
-            <span class="logo-letter" style="color: #96ceb4">o</span>
-            <span class="logo-letter" style="color: #ffeead">t</span>
-            <span class="logo-letter" style="color: #ff6b6b">e</span>
-            <span class="logo-letter" style="color: #4ecdc4">r</span>
+            <span class="logo-letter">A</span>
+            <span class="logo-letter">p</span>
+            <span class="logo-letter">p</span>
+            <span class="logo-letter">l</span>
+            <span class="logo-letter">e</span>
+            <span class="logo-letter">S</span>
+            <span class="logo-letter">h</span>
+            <span class="logo-letter">o</span>
+            <span class="logo-letter">o</span>
+            <span class="logo-letter">t</span>
+            <span class="logo-letter">e</span>
+            <span class="logo-letter">r</span>
         </div>
         <nav>
             <ul>
+                <li>
+                    <a href="#" id="languageToggle" class="language-toggle">
+                        <i class="fas fa-globe"></i>
+                        <span class="language-text">EN</span>
+                    </a>
+                </li>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="game-intro.html">Game Intro</a></li>
                 <li><a href="media.html" class="active">Media</a></li>
@@ -35,66 +43,49 @@
     </header>
 
     <div class="breadcrumb">
-        <a href="../index.html">Home</a> / <span>Media</span>
+        <a href="../index.html">Home</a> > <span>Media</span>
     </div>
 
     <main>
-        <section class="media-section">
-            <h1>Media Resources</h1>
+        <div class="media-section">
+            <h2>Game Media</h2>
             
             <div class="media-categories">
-                <div class="category-card">
-                    <i class="fas fa-images"></i>
-                    <h2>Game Screenshots</h2>
-                    <p>Explore stunning visuals from AppleShooter</p>
-                    <a href="media/screenshots.html" class="category-link">View Screenshots</a>
-                </div>
-                
-                <div class="category-card">
-                    <i class="fas fa-music"></i>
-                    <h2>Game Music</h2>
-                    <p>Listen to the amazing soundtrack</p>
-                    <a href="media/music.html" class="category-link">Listen to Music</a>
-                </div>
-                
-                <div class="category-card">
-                    <i class="fas fa-video"></i>
-                    <h2>Game Videos</h2>
-                    <p>Watch gameplay and trailers</p>
-                    <a href="media/videos.html" class="category-link">Watch Videos</a>
-                </div>
-            </div>
+                <a href="screenshots.html" class="media-category">
+                    <div class="category-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Game Screenshots</h3>
+                    <p>View amazing in-game moments</p>
+                </a>
 
-            <div class="media-highlights">
-                <h2>Featured Content</h2>
-                <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <img src="../images/featured-screenshot.jpg" alt="Featured Screenshot">
-                        <h3>Latest Gameplay</h3>
-                        <p>Check out the newest level design</p>
+                <a href="music.html" class="media-category">
+                    <div class="category-icon">
+                        <i class="fas fa-music"></i>
                     </div>
-                    <div class="highlight-card">
-                        <img src="../images/featured-music.jpg" alt="Featured Music">
-                        <h3>Main Theme</h3>
-                        <p>Listen to the iconic main theme</p>
+                    <h3>Game Music</h3>
+                    <p>Listen to the game soundtrack</p>
+                </a>
+
+                <a href="videos.html" class="media-category">
+                    <div class="category-icon">
+                        <i class="fas fa-video"></i>
                     </div>
-                    <div class="highlight-card">
-                        <img src="../images/featured-video.jpg" alt="Featured Video">
-                        <h3>Game Trailer</h3>
-                        <p>Watch the official game trailer</p>
-                    </div>
-                </div>
+                    <h3>Game Videos</h3>
+                    <p>Watch gameplay videos</p>
+                </a>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
         <div class="footer-content">
             <p class="text-gray-400"><a href="https://beian.miit.gov.cn" rel=nofollow>渝ICP备2025054030号</a>
-                <p class="text-gray-400">Contact Us:961674004@qq.com.</p> 
+                <p class="text-gray-400">Contact Us:ytsgabcde451@2925.com.</p>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/language-switch.js"></script>
 </body>
 </html> 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AppleShooter is an Apple Shooting Single Player game to play online for free. Games, Single player games, mini-games, apple, shooting">
+    <meta name="keywords" content="Games, Single player games, mini-games, apple, shooting">
+    <title>Game Music - an Apple Shooting Single Player game to play online for free. Games</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-letter">A</span>
+            <span class="logo-letter">p</span>
+            <span class="logo-letter">p</span>
+            <span class="logo-letter">l</span>
+            <span class="logo-letter">e</span>
+            <span class="logo-letter">S</span>
+            <span class="logo-letter">h</span>
+            <span class="logo-letter">o</span>
+            <span class="logo-letter">o</span>
+            <span class="logo-letter">t</span>
+            <span class="logo-letter">e</span>
+            <span class="logo-letter">r</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="game-intro.html">Game Intro</a></li>
+                <li><a href="media.html" class="active">Media</a></li>
+                <li><a href="guide.html">Guide</a></li>
+                <li><a href="talk.html">Talk</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> > <a href="media.html">Media</a> > <span>Game Music</span>
+    </div>
+
+    <main>
+        <div class="music-section">
+            <h2>Game Music</h2>
+            
+            <div class="music-player">
+                <div class="player-controls">
+                    <button class="control-btn" id="playPauseBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <span class="time">0:00 / 3:45</span>
+                </div>
+            </div>
+
+            <div class="music-tracks">
+                <!-- Main Theme -->
+                <div class="track-card">
+                    <div class="track-info">
+                        <h3>Main Theme</h3>
+                        <p>The iconic main theme of AppleShooter</p>
+                        <div class="track-meta">
+                            <span class="duration">3:45</span>
+                            <span class="download">
+                                <a href="../music/main-theme.mp3" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 1 Music -->
+                <div class="track-card">
+                    <div class="track-info">
+                        <h3>Level 1: Beginner's Luck</h3>
+                        <p>Upbeat and encouraging music for the first level</p>
+                        <div class="track-meta">
+                            <span class="duration">2:30</span>
+                            <span class="download">
+                                <a href="../music/level1.mp3" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boss Battle Theme -->
+                <div class="track-card">
+                    <div class="track-info">
+                        <h3>Boss Battle Theme</h3>
+                        <p>Intense music for epic boss battles</p>
+                        <div class="track-meta">
+                            <span class="duration">4:15</span>
+                            <span class="download">
+                                <a href="../music/boss-battle.mp3" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Victory Theme -->
+                <div class="track-card">
+                    <div class="track-info">
+                        <h3>Victory Theme</h3>
+                        <p>Celebratory music for completing levels</p>
+                        <div class="track-meta">
+                            <span class="duration">1:45</span>
+                            <span class="download">
+                                <a href="../music/victory.mp3" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Theme -->
+                <div class="track-card">
+                    <div class="track-info">
+                        <h3>Menu Theme</h3>
+                        <p>Relaxing background music for the main menu</p>
+                        <div class="track-meta">
+                            <span class="duration">2:00</span>
+                            <span class="download">
+                                <a href="../music/menu.mp3" download>
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="text-gray-400"><a href="https://beian.miit.gov.cn" rel=nofollow>渝ICP备2025054030号</a>
+                <p class="text-gray-400">Contact Us:ytsgabcde451@2925.com.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple music player functionality
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const progressBar = document.querySelector('.progress');
+        let isPlaying = false;
+
+        playPauseBtn.addEventListener('click', function() {
+            isPlaying = !isPlaying;
+            this.innerHTML = isPlaying ? 
+                '<i class="fas fa-pause"></i>' : 
+                '<i class="fas fa-play"></i>';
+        });
+    </script>
+</body>
+</html> 

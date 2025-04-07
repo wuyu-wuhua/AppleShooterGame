@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppleShooter - Talk</title>
+    <meta name="description" content="AppleShooter is an Apple Shooting Single Player game to play online for free. Games, Single player games, mini-games, apple, shooting">
+    <meta name="keywords" content="Games, Single player games, mini-games, apple, shooting">
+    <title>Talk - an Apple Shooting Single Player game to play online for free. Games</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <span class="logo-letter" style="color: #ff6b6b">A</span>
-            <span class="logo-letter" style="color: #4ecdc4">p</span>
-            <span class="logo-letter" style="color: #45b7d1">p</span>
-            <span class="logo-letter" style="color: #96ceb4">l</span>
-            <span class="logo-letter" style="color: #ffeead">e</span>
-            <span class="logo-letter" style="color: #ff6b6b">S</span>
-            <span class="logo-letter" style="color: #4ecdc4">h</span>
-            <span class="logo-letter" style="color: #45b7d1">o</span>
-            <span class="logo-letter" style="color: #96ceb4">o</span>
-            <span class="logo-letter" style="color: #ffeead">t</span>
-            <span class="logo-letter" style="color: #ff6b6b">e</span>
-            <span class="logo-letter" style="color: #4ecdc4">r</span>
+            <span class="logo-letter">A</span>
+            <span class="logo-letter">p</span>
+            <span class="logo-letter">p</span>
+            <span class="logo-letter">l</span>
+            <span class="logo-letter">e</span>
+            <span class="logo-letter">S</span>
+            <span class="logo-letter">h</span>
+            <span class="logo-letter">o</span>
+            <span class="logo-letter">o</span>
+            <span class="logo-letter">t</span>
+            <span class="logo-letter">e</span>
+            <span class="logo-letter">r</span>
         </div>
         <nav>
             <ul>
+                <li>
+                    <a href="#" id="languageToggle" class="language-toggle">
+                        <i class="fas fa-globe"></i>
+                        <span class="language-text">EN</span>
+                    </a>
+                </li>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="game-intro.html">Game Intro</a></li>
                 <li><a href="media.html">Media</a></li>
@@ -35,117 +43,134 @@
     </header>
 
     <div class="breadcrumb">
-        <a href="../index.html">Home</a> / <span>Talk</span>
+        <a href="../index.html">Home</a> > <span>Talk</span>
     </div>
 
     <main>
-        <section class="talk-section">
-            <h1>Community Talk</h1>
+        <div class="talk-section">
+            <h2>Game Discussion</h2>
             
-            <div class="talk-categories">
-                <div class="category-card">
-                    <i class="fas fa-comments"></i>
-                    <h2>General Discussion</h2>
-                    <p>Share your thoughts and experiences</p>
-                    <a href="#general-discussion" class="category-link">Join Discussion</a>
-                </div>
-                
-                <div class="category-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h2>Suggestions</h2>
-                    <p>Share your ideas for the game</p>
-                    <a href="#suggestions" class="category-link">Make Suggestions</a>
-                </div>
-                
-                <div class="category-card">
-                    <i class="fas fa-question-circle"></i>
-                    <h2>Help & Support</h2>
-                    <p>Get help with game issues</p>
-                    <a href="#help-support" class="category-link">Get Help</a>
-                </div>
+            <!-- Comment Form -->
+            <div class="comment-form">
+                <h3>Add Your Comment</h3>
+                <form id="commentForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea id="comment" name="comment" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Post Comment</button>
+                </form>
             </div>
 
-            <div class="talk-content">
-                <section id="general-discussion" class="talk-subsection">
-                    <h2>General Discussion</h2>
-                    <div class="discussion-threads">
-                        <div class="thread-card">
-                            <h3>Best Strategies for Level 5</h3>
-                            <p class="thread-meta">Posted by Player123 • 2 hours ago</p>
-                            <p>Share your best strategies for completing Level 5 with high scores!</p>
-                            <div class="thread-actions">
-                                <span><i class="fas fa-comment"></i> 15 comments</span>
-                                <span><i class="fas fa-heart"></i> 32 likes</span>
-                            </div>
-                        </div>
-                        <div class="thread-card">
-                            <h3>Favorite Power-ups</h3>
-                            <p class="thread-meta">Posted by AppleMaster • 5 hours ago</p>
-                            <p>What's your favorite power-up and why?</p>
-                            <div class="thread-actions">
-                                <span><i class="fas fa-comment"></i> 8 comments</span>
-                                <span><i class="fas fa-heart"></i> 24 likes</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <!-- Comments List -->
+            <div class="comments-container">
+                <div class="comments-header">
+                    <h3>Recent Comments</h3>
+                    <div class="comments-count">Total: 45 comments</div>
+                </div>
 
-                <section id="suggestions" class="talk-subsection">
-                    <h2>Suggestions</h2>
-                    <div class="suggestion-form">
-                        <h3>Share Your Ideas</h3>
-                        <form>
-                            <div class="form-group">
-                                <label for="suggestion-title">Title</label>
-                                <input type="text" id="suggestion-title" required>
+                <div class="comments-list">
+                    <!-- Comment Item 1 -->
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="user-info">
+                                <span class="username">GameMaster</span>
+                                <span class="timestamp">2024-03-15 14:30</span>
                             </div>
-                            <div class="form-group">
-                                <label for="suggestion-content">Your Suggestion</label>
-                                <textarea id="suggestion-content" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Submit Suggestion</button>
-                        </form>
+                            <button class="delete-btn" onclick="deleteComment(this)"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="comment-content">
+                            <p>This game is amazing! The physics are so realistic and the controls are smooth. I've been playing for hours!</p>
+                        </div>
                     </div>
-                </section>
 
-                <section id="help-support" class="talk-subsection">
-                    <h2>Help & Support</h2>
-                    <div class="faq-section">
-                        <div class="faq-item">
-                            <h3>How do I report a bug?</h3>
-                            <p>Use the bug report form below to submit detailed information about any issues you encounter.</p>
+                    <!-- Comment Item 2 -->
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="user-info">
+                                <span class="username">ArrowKing</span>
+                                <span class="timestamp">2024-03-14 09:15</span>
+                            </div>
+                            <button class="delete-btn" onclick="deleteComment(this)"><i class="fas fa-trash"></i></button>
                         </div>
-                        <div class="faq-item">
-                            <h3>Where can I find game updates?</h3>
-                            <p>Check our official website and social media channels for the latest updates and patch notes.</p>
+                        <div class="comment-content">
+                            <p>Just completed all levels! The final boss was challenging but so satisfying to beat. Can't wait for more content!</p>
                         </div>
                     </div>
-                    <div class="support-form">
-                        <h3>Need Help?</h3>
-                        <form>
-                            <div class="form-group">
-                                <label for="support-subject">Subject</label>
-                                <input type="text" id="support-subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="support-message">Message</label>
-                                <textarea id="support-message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
+
+                    <!-- More comments will be dynamically loaded -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn" onclick="changePage('prev')" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <div class="page-numbers">
+                        <span class="page-number active">1</span>
+                        <span class="page-number">2</span>
+                        <span class="page-number">3</span>
                     </div>
-                </section>
+                    <button class="page-btn" onclick="changePage('next')">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
         <div class="footer-content">
             <p class="text-gray-400"><a href="https://beian.miit.gov.cn" rel=nofollow>渝ICP备2025054030号</a>
-            <p class="text-gray-400">Contact Us:961674004@qq.com.</p> 
+                <p class="text-gray-400">Contact Us:ytsgabcde451@2925.com.</p>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script>
+        // Comment form submission
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const comment = document.getElementById('comment').value;
+            
+            // Here you would typically send the data to a server
+            // For now, we'll just log it
+            console.log('New comment:', { username, comment });
+            
+            // Clear the form
+            this.reset();
+        });
+
+        // Delete comment function
+        function deleteComment(button) {
+            const commentItem = button.closest('.comment-item');
+            commentItem.remove();
+        }
+
+        // Pagination function
+        function changePage(direction) {
+            // Here you would typically fetch new comments from a server
+            // For now, we'll just log the action
+            console.log('Changing page:', direction);
+        }
+
+        // Language toggle functionality
+        const languageToggle = document.getElementById('languageToggle');
+        const languageText = languageToggle.querySelector('.language-text');
+        let isEnglish = true;
+
+        languageToggle.addEventListener('click', function() {
+            isEnglish = !isEnglish;
+            languageText.textContent = isEnglish ? 'EN' : '中';
+            
+            // Here you would typically load the appropriate language content
+            // For now, we'll just log the language change
+            console.log('Language changed to:', isEnglish ? 'English' : 'Chinese');
+        });
+    </script>
 </body>
 </html> 
