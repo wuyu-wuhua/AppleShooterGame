@@ -7,46 +7,103 @@ function getCurrentLanguage() {
 function setLanguage(lang) {
     localStorage.setItem('language', lang);
     updatePageContent(lang);
+    updateLanguageSelector(lang);
+    closeLanguageDropdown();
+}
+
+// 更新语言选择器显示
+function updateLanguageSelector(lang) {
+    const languageText = document.querySelector('.language-text');
+    if (languageText) {
+        switch(lang) {
+            case 'en':
+                languageText.textContent = 'EN';
+                break;
+            case 'zh':
+                languageText.textContent = '中';
+                break;
+            case 'ja':
+                languageText.textContent = '日';
+                break;
+            case 'ko':
+                languageText.textContent = '한';
+                break;
+            case 'es':
+                languageText.textContent = 'ES';
+                break;
+        }
+    }
+}
+
+// 打开语言下拉菜单
+function openLanguageDropdown() {
+    const dropdown = document.querySelector('.language-dropdown');
+    const chevron = document.querySelector('.language-toggle .fa-chevron-down');
+    if (dropdown) {
+        dropdown.classList.add('active');
+        chevron.style.transform = 'rotate(180deg)';
+    }
+}
+
+// 关闭语言下拉菜单
+function closeLanguageDropdown() {
+    const dropdown = document.querySelector('.language-dropdown');
+    const chevron = document.querySelector('.language-toggle .fa-chevron-down');
+    if (dropdown) {
+        dropdown.classList.remove('active');
+        chevron.style.transform = 'rotate(0deg)';
+    }
 }
 
 // 更新页面内容
 function updatePageContent(lang) {
     const data = languageData[lang];
-    
+    if (!data) return;
+
     // 更新导航链接
-    document.querySelectorAll('nav a').forEach(link => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href.includes('index.html')) {
-            link.textContent = data.home;
-        } else if (href.includes('game-intro.html')) {
-            link.textContent = data.gameIntro;
-        } else if (href.includes('media.html')) {
-            link.textContent = data.media;
-        } else if (href.includes('guide.html')) {
-            link.textContent = data.guide;
-        } else if (href.includes('talk.html')) {
-            link.textContent = data.talk;
+        if (href) {
+            if (href.includes('index.html')) {
+                link.textContent = data.home;
+            } else if (href.includes('game-intro.html')) {
+                link.textContent = data.gameIntro;
+            } else if (href.includes('media.html')) {
+                link.textContent = data.media;
+            } else if (href.includes('guide.html')) {
+                link.textContent = data.guide;
+            } else if (href.includes('talk.html')) {
+                link.textContent = data.talk;
+            }
         }
     });
 
     // 更新面包屑导航
-    document.querySelectorAll('.breadcrumb a').forEach(link => {
+    const breadcrumbLinks = document.querySelectorAll('.breadcrumb-item a');
+    breadcrumbLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href.includes('index.html')) {
+        if (href) {
+            if (href.includes('index.html')) {
+                link.textContent = data.home;
+            } else if (href.includes('game-intro.html')) {
+                link.textContent = data.gameIntro;
+            } else if (href.includes('media.html')) {
+                link.textContent = data.media;
+            } else if (href.includes('guide.html')) {
+                link.textContent = data.guide;
+            } else if (href.includes('talk.html')) {
+                link.textContent = data.talk;
+            }
+        if (href && href.includes('index.html')) {
             link.textContent = data.home;
         }
     });
     document.querySelectorAll('.breadcrumb span').forEach(span => {
-        if (span.textContent.includes('Play Now')) {
-            span.textContent = data.playNow;
-        } else if (span.textContent.includes('Game Intro')) {
+        if (span.textContent.includes('Game Intro') || span.textContent.includes('游戏介绍') || 
+            span.textContent.includes('ゲーム紹介') || span.textContent.includes('게임 소개') || 
+            span.textContent.includes('Introducción')) {
             span.textContent = data.gameIntro;
-        } else if (span.textContent.includes('Media')) {
-            span.textContent = data.media;
-        } else if (span.textContent.includes('Guide')) {
-            span.textContent = data.guide;
-        } else if (span.textContent.includes('Talk')) {
-            span.textContent = data.talk;
         }
     });
 
@@ -54,33 +111,236 @@ function updatePageContent(lang) {
     const currentPage = window.location.pathname.split('/').pop();
     
     if (currentPage === 'game-intro.html') {
-        // 更新标题和描述
-        document.querySelector('.game-overview h1').textContent = data.gameTitle;
-        document.querySelector('.game-description p').textContent = data.gameDescription;
+        // 更新游戏介绍页面内容
+        const gameTitle = document.querySelector('.game-title');
+        if (gameTitle) gameTitle.textContent = data.gameTitle;
+        
+        const gameDescription = document.querySelector('.game-description');
+        if (gameDescription) gameDescription.textContent = data.gameDescription;
         
         // 更新游戏玩法部分
-        document.querySelector('.gameplay h2').textContent = data.gameplay;
-        document.querySelector('.gameplay p').textContent = data.gameplayDescription;
+        const gameplayTitle = document.querySelector('.gameplay h2');
+        if (gameplayTitle) gameplayTitle.textContent = data.gameplay;
         
-        // 更新基本操作部分
-        document.querySelector('.gameplay h3').textContent = data.basicControls;
-        document.querySelector('.gameplay ul li').textContent = data.basicControlsDesc;
-        
-        // 更新游戏目标部分
-        document.querySelector('.game-objectives h3').textContent = data.gameObjectives;
-        document.querySelector('.game-objectives p').textContent = data.gameObjectivesDesc;
-        
-        // 更新游戏特色部分
-        document.querySelector('.game-features h3').textContent = data.gameFeatures;
-        document.querySelector('.game-features p').textContent = data.gameFeaturesDesc;
+        const gameplayContent = document.querySelector('.gameplay-content');
+        if (gameplayContent) gameplayContent.textContent = data.gameplayContent;
         
         // 更新游戏历史部分
-        document.querySelector('.game-history h2').textContent = data.gameHistory;
-        document.querySelector('.game-history p').textContent = data.gameHistoryDesc;
+        const historyTitle = document.querySelector('.game-history h2');
+        if (historyTitle) historyTitle.textContent = data.gameHistory;
+        
+        const historyContent = document.querySelector('.history-content');
+        if (historyContent) historyContent.textContent = data.historyContent;
         
         // 更新创作团队部分
-        document.querySelector('.development-team h2').textContent = data.developmentTeam;
-        document.querySelector('.development-team p').textContent = data.developmentTeamDesc;
+        const teamTitle = document.querySelector('.development-team h2');
+        if (teamTitle) teamTitle.textContent = data.developmentTeam;
+        
+        const teamContent = document.querySelector('.team-content');
+        if (teamContent) teamContent.textContent = data.teamContent;
+    } else if (currentPage === 'guide.html') {
+        // 更新主要标题
+        document.querySelector('.basic-controls h2').textContent = data.basicControls;
+        document.querySelector('.level-guide h2').textContent = data.levelGuide;
+        document.querySelector('.advanced-tips h2').textContent = data.advancedTips;
+        document.querySelector('.scoring-system h2').textContent = data.scoringSystem;
+        document.querySelector('.achievements h2').textContent = data.achievements;
+
+        // 更新基本操作部分
+        const controlsContent = document.querySelector('.controls-content');
+        if (controlsContent) {
+            // 瞄准系统
+            const aimingH3 = controlsContent.querySelector('.control-item:nth-child(1) h3');
+            if (aimingH3) aimingH3.textContent = data.aimingSystem;
+            const aimingUl = controlsContent.querySelector('.control-item:nth-child(1) ul');
+            if (aimingUl) {
+                const lis = aimingUl.querySelectorAll('li');
+                data.aimingSystemList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 射击机制
+            const shootingH3 = controlsContent.querySelector('.control-item:nth-child(2) h3');
+            if (shootingH3) shootingH3.textContent = data.shootingMechanism;
+            const shootingUl = controlsContent.querySelector('.control-item:nth-child(2) ul');
+            if (shootingUl) {
+                const lis = shootingUl.querySelectorAll('li');
+                data.shootingMechanismList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 特殊技巧
+            const specialH3 = controlsContent.querySelector('.control-item:nth-child(3) h3');
+            if (specialH3) specialH3.textContent = data.specialTechniques;
+            const specialUl = controlsContent.querySelector('.control-item:nth-child(3) ul');
+            if (specialUl) {
+                const lis = specialUl.querySelectorAll('li');
+                data.specialTechniquesList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+        }
+
+        // 更新关卡攻略部分
+        const levelContent = document.querySelector('.level-content');
+        if (levelContent) {
+            // 初级关卡
+            const beginnerH3 = levelContent.querySelector('.level-item:nth-child(1) h3');
+            if (beginnerH3) beginnerH3.textContent = data.beginnerLevels;
+            const beginnerUl = levelContent.querySelector('.level-item:nth-child(1) ul');
+            if (beginnerUl) {
+                const lis = beginnerUl.querySelectorAll('li');
+                data.beginnerLevelsList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 中级关卡
+            const intermediateH3 = levelContent.querySelector('.level-item:nth-child(2) h3');
+            if (intermediateH3) intermediateH3.textContent = data.intermediateLevels;
+            const intermediateUl = levelContent.querySelector('.level-item:nth-child(2) ul');
+            if (intermediateUl) {
+                const lis = intermediateUl.querySelectorAll('li');
+                data.intermediateLevelsList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 高级关卡
+            const advancedH3 = levelContent.querySelector('.level-item:nth-child(3) h3');
+            if (advancedH3) advancedH3.textContent = data.advancedLevels;
+            const advancedUl = levelContent.querySelector('.level-item:nth-child(3) ul');
+            if (advancedUl) {
+                const lis = advancedUl.querySelectorAll('li');
+                data.advancedLevelsList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 终极关卡
+            const ultimateH3 = levelContent.querySelector('.level-item:nth-child(4) h3');
+            if (ultimateH3) ultimateH3.textContent = data.ultimateLevels;
+            const ultimateUl = levelContent.querySelector('.level-item:nth-child(4) ul');
+            if (ultimateUl) {
+                const lis = ultimateUl.querySelectorAll('li');
+                data.ultimateLevelsList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+        }
+
+        // 更新高级技巧部分
+        const tipsContent = document.querySelector('.tips-content');
+        if (tipsContent) {
+            // 风力补偿
+            const windH3 = tipsContent.querySelector('.tip-item:nth-child(1) h3');
+            if (windH3) windH3.textContent = data.windCompensation;
+            const windUl = tipsContent.querySelector('.tip-item:nth-child(1) ul');
+            if (windUl) {
+                const lis = windUl.querySelectorAll('li');
+                data.windCompensationList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 移动目标预判
+            const targetH3 = tipsContent.querySelector('.tip-item:nth-child(2) h3');
+            if (targetH3) targetH3.textContent = data.movingTargetPrediction;
+            const targetUl = tipsContent.querySelector('.tip-item:nth-child(2) ul');
+            if (targetUl) {
+                const lis = targetUl.querySelectorAll('li');
+                data.movingTargetPredictionList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 完美蓄力时机
+            const chargeH3 = tipsContent.querySelector('.tip-item:nth-child(3) h3');
+            if (chargeH3) chargeH3.textContent = data.perfectChargeTiming;
+            const chargeUl = tipsContent.querySelector('.tip-item:nth-child(3) ul');
+            if (chargeUl) {
+                const lis = chargeUl.querySelectorAll('li');
+                data.perfectChargeTimingList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+        }
+
+        // 更新得分系统部分
+        const scoringContent = document.querySelector('.scoring-content');
+        if (scoringContent) {
+            // 基础得分
+            const basicH3 = scoringContent.querySelector('.score-item:nth-child(1) h3');
+            if (basicH3) basicH3.textContent = data.basicScoring;
+            const basicUl = scoringContent.querySelector('.score-item:nth-child(1) ul');
+            if (basicUl) {
+                const lis = basicUl.querySelectorAll('li');
+                data.basicScoringList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 连击奖励
+            const comboH3 = scoringContent.querySelector('.score-item:nth-child(2) h3');
+            if (comboH3) comboH3.textContent = data.comboBonus;
+            const comboUl = scoringContent.querySelector('.score-item:nth-child(2) ul');
+            if (comboUl) {
+                const lis = comboUl.querySelectorAll('li');
+                data.comboBonusList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 特殊奖励
+            const specialH3 = scoringContent.querySelector('.score-item:nth-child(3) h3');
+            if (specialH3) specialH3.textContent = data.specialBonus;
+            const specialUl = scoringContent.querySelector('.score-item:nth-child(3) ul');
+            if (specialUl) {
+                const lis = specialUl.querySelectorAll('li');
+                data.specialBonusList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+        }
+
+        // 更新成就系统部分
+        const achievementsContent = document.querySelector('.achievements-content');
+        if (achievementsContent) {
+            // 新手成就
+            const beginnerH3 = achievementsContent.querySelector('.achievement-item:nth-child(1) h3');
+            if (beginnerH3) beginnerH3.textContent = data.beginnerAchievements;
+            const beginnerUl = achievementsContent.querySelector('.achievement-item:nth-child(1) ul');
+            if (beginnerUl) {
+                const lis = beginnerUl.querySelectorAll('li');
+                data.beginnerAchievementsList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 进阶成就
+            const intermediateH3 = achievementsContent.querySelector('.achievement-item:nth-child(2) h3');
+            if (intermediateH3) intermediateH3.textContent = data.intermediateAchievements;
+            const intermediateUl = achievementsContent.querySelector('.achievement-item:nth-child(2) ul');
+            if (intermediateUl) {
+                const lis = intermediateUl.querySelectorAll('li');
+                data.intermediateAchievementsList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+
+            // 大师成就
+            const masterH3 = achievementsContent.querySelector('.achievement-item:nth-child(3) h3');
+            if (masterH3) masterH3.textContent = data.masterAchievements;
+            const masterUl = achievementsContent.querySelector('.achievement-item:nth-child(3) ul');
+            if (masterUl) {
+                const lis = masterUl.querySelectorAll('li');
+                data.masterAchievementsList.forEach((text, index) => {
+                    if (lis[index]) lis[index].textContent = text;
+                });
+            }
+        }
     } else if (currentPage === 'media.html') {
         document.querySelector('.media-section h2').textContent = data.gameMedia;
         document.querySelectorAll('.media-category h3').forEach((h3, index) => {
@@ -92,41 +352,6 @@ function updatePageContent(lang) {
             if (index === 0) p.textContent = data.screenshotsDesc;
             else if (index === 1) p.textContent = data.musicDesc;
             else if (index === 2) p.textContent = data.videosDesc;
-        });
-    } else if (currentPage === 'guide.html') {
-        // 更新基本操作指南部分
-        document.querySelector('.basic-controls h2').textContent = data.basicControls;
-        document.querySelector('.basic-controls p').textContent = data.basicControlsGuide;
-        document.querySelectorAll('.basic-controls ul li').forEach((li, index) => {
-            li.textContent = data.basicControlsList[index];
-        });
-        
-        // 更新关卡攻略部分
-        document.querySelector('.level-guide h2').textContent = data.levelGuide;
-        document.querySelector('.level-guide p').textContent = data.levelGuideDesc;
-        document.querySelectorAll('.level-guide ul li').forEach((li, index) => {
-            li.textContent = data.levelGuideList[index];
-        });
-        
-        // 更新高级技巧部分
-        document.querySelector('.advanced-tips h2').textContent = data.advancedTips;
-        document.querySelector('.advanced-tips p').textContent = data.advancedTipsDesc;
-        document.querySelectorAll('.advanced-tips ul li').forEach((li, index) => {
-            li.textContent = data.advancedTipsList[index];
-        });
-        
-        // 更新得分系统部分
-        document.querySelector('.scoring-system h2').textContent = data.scoringSystem;
-        document.querySelector('.scoring-system p').textContent = data.scoringSystemDesc;
-        document.querySelectorAll('.scoring-system ul li').forEach((li, index) => {
-            li.textContent = data.scoringSystemList[index];
-        });
-        
-        // 更新成就系统部分
-        document.querySelector('.achievements h2').textContent = data.achievements;
-        document.querySelector('.achievements p').textContent = data.achievementsDesc;
-        document.querySelectorAll('.achievements ul li').forEach((li, index) => {
-            li.textContent = data.achievementsList[index];
         });
     } else if (currentPage === 'talk.html') {
         document.querySelector('.talk-section h2').textContent = data.gameDiscussion;
@@ -140,26 +365,50 @@ function updatePageContent(lang) {
     }
 
     // 更新页脚内容
-    const footerContact = document.querySelector('.footer-content p:last-child');
+    const footerContact = document.querySelector('.footer-contact');
     if (footerContact) {
-        footerContact.textContent = data.contactUs + data.email;
+        footerContact.textContent = data.contactUs;
     }
 }
 
 // 初始化语言切换功能
 document.addEventListener('DOMContentLoaded', function() {
-    const languageToggle = document.getElementById('languageToggle');
-    const languageText = languageToggle.querySelector('.language-text');
     const currentLang = getCurrentLanguage();
-    
-    // 设置初始语言
-    languageText.textContent = currentLang === 'en' ? 'EN' : '中';
+    updateLanguageSelector(currentLang);
     updatePageContent(currentLang);
     
-    // 添加点击事件
-    languageToggle.addEventListener('click', function() {
-        const newLang = currentLang === 'en' ? 'zh' : 'en';
-        setLanguage(newLang);
-        languageText.textContent = newLang === 'en' ? 'EN' : '中';
-    });
+    // 添加语言选择事件监听
+    const languageToggle = document.querySelector('.language-toggle');
+    const languageDropdown = document.querySelector('.language-dropdown');
+    
+    if (languageToggle && languageDropdown) {
+        // 点击语言切换按钮
+        languageToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (languageDropdown.classList.contains('active')) {
+                closeLanguageDropdown();
+            } else {
+                openLanguageDropdown();
+            }
+        });
+        
+        // 点击语言选项
+        languageDropdown.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+        
+        // 点击页面其他地方关闭下拉菜单
+        document.addEventListener('click', function() {
+            closeLanguageDropdown();
+        });
+        
+        // 阻止下拉菜单点击事件冒泡
+        languageDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 }); 

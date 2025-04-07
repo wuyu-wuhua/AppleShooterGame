@@ -27,17 +27,27 @@
         </div>
         <nav>
             <ul>
-                <li>
-                    <a href="#" id="languageToggle" class="language-toggle">
-                        <i class="fas fa-globe"></i>
-                        <span class="language-text">EN</span>
-                    </a>
-                </li>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="game-intro.html">Game Intro</a></li>
                 <li><a href="media.html">Media</a></li>
                 <li><a href="guide.html" class="active">Guide</a></li>
                 <li><a href="talk.html">Talk</a></li>
+                <li>
+                    <div class="language-selector">
+                        <button class="language-toggle">
+                            <i class="fas fa-globe"></i>
+                            <span class="language-text">EN</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="zh">中文</a>
+                            <a href="#" data-lang="ja">日本語</a>
+                            <a href="#" data-lang="ko">한국어</a>
+                            <a href="#" data-lang="es">Español</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>

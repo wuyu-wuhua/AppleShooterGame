@@ -1472,50 +1472,112 @@ button:hover {
     }
 }
 
-/* Language Toggle Styles */
+/* Language Selector Styles */
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
 .language-toggle {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    color: var(--primary-blue);
-    text-decoration: none;
-    transition: all 0.3s ease;
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border: none;
     border-radius: 20px;
-    background: rgba(0, 180, 216, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333;
 }
 
 .language-toggle:hover {
-    background: rgba(0, 180, 216, 0.2);
-    transform: translateY(-2px);
+    background-color: #e0e0e0;
 }
 
 .language-toggle i {
-    font-size: 1.2rem;
+    font-size: 16px;
+    margin-right: 8px;
+    color: #666;
+}
+
+.language-toggle .fa-chevron-down {
+    margin-left: 8px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
 }
 
 .language-text {
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-weight: 500;
+    min-width: 24px;
+    text-align: center;
 }
 
-/* Responsive Design for Language Toggle */
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    min-width: 120px;
+    display: none;
+    z-index: 1000;
+}
+
+.language-dropdown.active {
+    display: block;
+}
+
+.language-dropdown a {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.language-dropdown a:hover {
+    background-color: #f5f5f5;
+}
+
+/* 响应式设计 */
 @media (max-width: 768px) {
     .language-toggle {
-        padding: 0.3rem 0.8rem;
+        padding: 6px 10px;
+        margin-left: 10px;
+    }
+    
+    .language-toggle i {
+        font-size: 14px;
+        margin-right: 6px;
     }
     
     .language-text {
-        font-size: 0.8rem;
+        font-size: 12px;
+        min-width: 20px;
+    }
+    
+    .language-dropdown {
+        min-width: 100px;
     }
 }
 
-@media (max-width: 480px) {
-    .language-toggle {
-        padding: 0.2rem 0.6rem;
+/* 语言切换动画 */
+@keyframes languageSwitch {
+    0% {
+        transform: scale(1);
     }
-    
-    .language-text {
-        display: none;
+    50% {
+        transform: scale(0.9);
     }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.language-toggle:active {
+    animation: languageSwitch 0.3s ease;
 } 
