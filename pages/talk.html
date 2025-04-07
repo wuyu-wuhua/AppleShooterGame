@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppleShooter - Talk</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-letter" style="color: #ff6b6b">A</span>
+            <span class="logo-letter" style="color: #4ecdc4">p</span>
+            <span class="logo-letter" style="color: #45b7d1">p</span>
+            <span class="logo-letter" style="color: #96ceb4">l</span>
+            <span class="logo-letter" style="color: #ffeead">e</span>
+            <span class="logo-letter" style="color: #ff6b6b">S</span>
+            <span class="logo-letter" style="color: #4ecdc4">h</span>
+            <span class="logo-letter" style="color: #45b7d1">o</span>
+            <span class="logo-letter" style="color: #96ceb4">o</span>
+            <span class="logo-letter" style="color: #ffeead">t</span>
+            <span class="logo-letter" style="color: #ff6b6b">e</span>
+            <span class="logo-letter" style="color: #4ecdc4">r</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="game-intro.html">Game Intro</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="guide.html">Guide</a></li>
+                <li><a href="talk.html" class="active">Talk</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> / <span>Talk</span>
+    </div>
+
+    <main>
+        <section class="talk-section">
+            <h1>Community Talk</h1>
+            
+            <div class="talk-categories">
+                <div class="category-card">
+                    <i class="fas fa-comments"></i>
+                    <h2>General Discussion</h2>
+                    <p>Share your thoughts and experiences</p>
+                    <a href="#general-discussion" class="category-link">Join Discussion</a>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Suggestions</h2>
+                    <p>Share your ideas for the game</p>
+                    <a href="#suggestions" class="category-link">Make Suggestions</a>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h2>Help & Support</h2>
+                    <p>Get help with game issues</p>
+                    <a href="#help-support" class="category-link">Get Help</a>
+                </div>
+            </div>
+
+            <div class="talk-content">
+                <section id="general-discussion" class="talk-subsection">
+                    <h2>General Discussion</h2>
+                    <div class="discussion-threads">
+                        <div class="thread-card">
+                            <h3>Best Strategies for Level 5</h3>
+                            <p class="thread-meta">Posted by Player123 • 2 hours ago</p>
+                            <p>Share your best strategies for completing Level 5 with high scores!</p>
+                            <div class="thread-actions">
+                                <span><i class="fas fa-comment"></i> 15 comments</span>
+                                <span><i class="fas fa-heart"></i> 32 likes</span>
+                            </div>
+                        </div>
+                        <div class="thread-card">
+                            <h3>Favorite Power-ups</h3>
+                            <p class="thread-meta">Posted by AppleMaster • 5 hours ago</p>
+                            <p>What's your favorite power-up and why?</p>
+                            <div class="thread-actions">
+                                <span><i class="fas fa-comment"></i> 8 comments</span>
+                                <span><i class="fas fa-heart"></i> 24 likes</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="suggestions" class="talk-subsection">
+                    <h2>Suggestions</h2>
+                    <div class="suggestion-form">
+                        <h3>Share Your Ideas</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="suggestion-title">Title</label>
+                                <input type="text" id="suggestion-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="suggestion-content">Your Suggestion</label>
+                                <textarea id="suggestion-content" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Suggestion</button>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="help-support" class="talk-subsection">
+                    <h2>Help & Support</h2>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h3>How do I report a bug?</h3>
+                            <p>Use the bug report form below to submit detailed information about any issues you encounter.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Where can I find game updates?</h3>
+                            <p>Check our official website and social media channels for the latest updates and patch notes.</p>
+                        </div>
+                    </div>
+                    <div class="support-form">
+                        <h3>Need Help?</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="support-subject">Subject</label>
+                                <input type="text" id="support-subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="support-message">Message</label>
+                                <textarea id="support-message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="text-gray-400"><a href="https://beian.miit.gov.cn" rel=nofollow>渝ICP备2025054030号</a>
+            <p class="text-gray-400">Contact Us:961674004@qq.com.</p> 
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 
