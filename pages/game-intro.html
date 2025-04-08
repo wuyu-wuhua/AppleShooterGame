@@ -6,7 +6,7 @@
     <meta name="description" content="AppleShooter is an Apple Shooting Single Player game to play online for free. Games, Single player games, mini-games, apple, shooting">
     <meta name="keywords" content="Games, Single player games, mini-games, apple, shooting">
     <title>Game Intro - an Apple Shooting Single Player game to play online for free. Games</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -27,11 +27,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="game-intro.html" class="active">Game Intro</a></li>
-                <li><a href="media.html">Media</a></li>
-                <li><a href="guide.html">Guide</a></li>
-                <li><a href="talk.html">Talk</a></li>
+                <li><a href="../index.html" class="nav-link" data-lang-key="home">Home</a></li>
+                <li><a href="game-intro.html" class="nav-link active" data-lang-key="gameIntro">Game Intro</a></li>
+                <li><a href="media.html" class="nav-link" data-lang-key="media">Media</a></li>
+                <li><a href="guide.html" class="nav-link" data-lang-key="guide">Guide</a></li>
+                <li><a href="talk.html" class="nav-link" data-lang-key="talk">Talk</a></li>
                 <li>
                     <div class="language-selector">
                         <button class="language-toggle">
@@ -53,98 +53,100 @@
     </header>
 
     <div class="breadcrumb">
-        <a href="../index.html">Home</a> > <span>Game Intro</span>
+        <a href="../index.html" class="breadcrumb-item" data-lang-key="home">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-item active" data-lang-key="gameIntro">Game Intro</span>
     </div>
 
     <main>
         <div class="game-intro-section">
             <section class="game-overview">
-                <h1>AppleShooter - 经典射击游戏</h1>
+                <h1 class="game-title">AppleShooter - Classic Shooting Game</h1>
                 <div class="game-description">
-                    <p>AppleShooter是一款充满挑战性的射击游戏，玩家需要使用弓箭精确射击放在人头上的苹果。游戏考验玩家的准确性、耐心和技巧，每一箭都可能带来胜利或失败。</p>
+                    <p>AppleShooter is a challenging shooting game where players must use a bow and arrow to precisely shoot apples placed on people's heads. The game tests players' accuracy, patience, and skill, with each shot potentially bringing victory or defeat.</p>
                 </div>
             </section>
 
             <section class="gameplay">
-                <h2>游戏玩法</h2>
+                <h2 class="gameplay">Gameplay</h2>
                 <div class="gameplay-details">
                     <div class="gameplay-text">
-                        <h3>基本操作</h3>
+                        <h3 class="basicControls">Basic Controls</h3>
                         <ul>
-                            <li>使用鼠标瞄准：移动鼠标来调整弓箭的方向</li>
-                            <li>按住鼠标左键：蓄力，箭矢的力度会随着按住时间增加</li>
-                            <li>释放鼠标左键：发射箭矢</li>
+                            <li class="basicControlsDesc" data-lang-key="basicControlsDesc">Use the mouse to aim: Move the mouse to adjust the direction of the arrow</li>
+                            <li data-lang-key="chargeControl">Hold left mouse button: Charge, arrow power increases with hold time</li>
+                            <li data-lang-key="fireControl">Release left mouse button: Fire the arrow</li>
                         </ul>
 
-                        <h3>游戏目标</h3>
+                        <h3 class="gameObjectives">Game Objectives</h3>
                         <ul>
-                            <li>准确射中苹果，避免击中人物</li>
-                            <li>每个关卡都有不同的难度和挑战</li>
-                            <li>通过精确的射击获得高分</li>
+                            <li class="gameObjectivesDesc" data-lang-key="gameObjectivesDesc">Accurately hit the apple, avoid hitting the person</li>
+                            <li data-lang-key="levelDifficulty">Each level has different difficulties and challenges</li>
+                            <li data-lang-key="highScore">Get high scores through precise shooting</li>
                         </ul>
 
-                        <h3>游戏特色</h3>
+                        <h3 class="gameFeatures">Game Features</h3>
                         <ul>
-                            <li>物理引擎：真实的箭矢飞行轨迹</li>
-                            <li>难度递增：逐步提高的游戏难度</li>
-                            <li>即时反馈：直观的命中效果</li>
+                            <li class="gameFeaturesDesc" data-lang-key="gameFeaturesDesc">Physics engine: Realistic arrow flight trajectory</li>
+                            <li data-lang-key="increasingDifficulty">Increasing difficulty: Gradually increasing game difficulty</li>
+                            <li data-lang-key="instantFeedback">Instant feedback: Intuitive hit effects</li>
                         </ul>
                     </div>
                     
                     <div class="gameplay-images">
                         <div class="screenshot">
-                            <img src="../images/gameplay1.jpg" alt="AppleShooter游戏截图 - 瞄准场景">
-                            <p>瞄准场景 - 精确计算射击角度</p>
+                            <img src="../images/gameplay1.jpg" alt="AppleShooter Game Screenshot - Aiming Scene">
+                            <p>Aiming Scene - Precise shooting angle calculation</p>
                         </div>
                         <div class="screenshot">
-                            <img src="../images/gameplay2.jpg" alt="AppleShooter游戏截图 - 命中效果">
-                            <p>成功命中 - 箭矢精确击中苹果</p>
+                            <img src="../images/gameplay2.jpg" alt="AppleShooter Game Screenshot - Hit Effect">
+                            <p>Successful Hit - Arrow precisely hits the apple</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="game-history">
-                <h2>游戏历史</h2>
+                <h2 class="gameHistory">Game History</h2>
                 <div class="history-content">
-                    <p>AppleShooter的灵感来源于瑞士民间传说中的英雄威廉·退尔（William Tell）。传说中，他被迫要用弓箭射击放在儿子头上的苹果，展现了惊人的箭术。这个故事启发了游戏开发团队，将这个扣人心弦的场景转化为一款富有挑战性的休闲游戏。</p>
+                    <p class="gameHistoryDesc">The inspiration for AppleShooter comes from the Swiss folk legend of William Tell. In the legend, he was forced to shoot an apple placed on his son's head with a bow and arrow, demonstrating amazing archery skills. This story inspired the game development team to transform this thrilling scene into a challenging casual game.</p>
                     
-                    <h3>发展历程</h3>
+                    <h3 data-lang-key="developmentHistory">Development History</h3>
                     <ul>
-                        <li>2005年：游戏概念诞生，开始早期开发</li>
-                        <li>2006年：首个Flash版本发布</li>
-                        <li>2010年：推出改进版本，加入新的游戏机制</li>
-                        <li>2015年：HTML5版本发布，支持移动设备</li>
-                        <li>2020年：全新升级，优化游戏体验</li>
+                        <li data-lang-key="history2005">2005: Game concept born, early development started</li>
+                        <li data-lang-key="history2006">2006: First Flash version released</li>
+                        <li data-lang-key="history2010">2010: Improved version launched with new game mechanics</li>
+                        <li data-lang-key="history2015">2015: HTML5 version released, supporting mobile devices</li>
+                        <li data-lang-key="history2020">2020: Major upgrade, optimizing game experience</li>
                     </ul>
                 </div>
             </section>
 
             <section class="development-team">
-                <h2>创作团队</h2>
+                <h2 class="developmentTeam">Development Team</h2>
                 <div class="team-info">
                     <div class="team-description">
-                        <p>AppleShooter由一支充满激情的游戏开发团队打造。团队成员来自世界各地，共同致力于创造有趣且具有挑战性的游戏体验。</p>
+                        <p class="developmentTeamDesc">AppleShooter is created by a passionate game development team. Team members come from all over the world, working together to create fun and challenging gaming experiences.</p>
                     </div>
                     
                     <div class="team-members">
-                        <h3>核心团队</h3>
+                        <h3 data-lang-key="coreTeam">Core Team</h3>
                         <ul>
                             <li>
-                                <strong>游戏设计：</strong>
-                                <p>John Smith - 资深游戏设计师，拥有10年休闲游戏开发经验</p>
+                                <strong data-lang-key="gameDesign">Game Design:</strong>
+                                <p data-lang-key="gameDesigner">John Smith - Senior game designer with 10 years of casual game development experience</p>
                             </li>
                             <li>
-                                <strong>程序开发：</strong>
-                                <p>Sarah Johnson - 主程序，专注于物理引擎优化</p>
+                                <strong data-lang-key="programming">Programming:</strong>
+                                <p data-lang-key="programmer">Sarah Johnson - Lead programmer, focusing on physics engine optimization</p>
                             </li>
                             <li>
-                                <strong>美术设计：</strong>
-                                <p>Michael Chen - 资深游戏美术师，负责视觉风格设计</p>
+                                <strong data-lang-key="artDesign">Art Design:</strong>
+                                <p data-lang-key="artist">Michael Chen - Senior game artist, responsible for visual style design</p>
                             </li>
                             <li>
-                                <strong>音效设计：</strong>
-                                <p>Lisa Wang - 音效师，创作游戏配乐与音效</p>
+                                <strong data-lang-key="soundDesign">Sound Design:</strong>
+                                <p data-lang-key="soundDesigner">Lisa Wang - Sound designer, creating game music and sound effects</p>
                             </li>
                         </ul>
                     </div>
@@ -156,7 +158,7 @@
     <footer>
         <div class="footer-content">
             <p class="text-gray-400"><a href="https://beian.miit.gov.cn" rel=nofollow>渝ICP备2025054030号</a>
-                <p class="text-gray-400">Contact Us:ytsgabcde451@2925.com.</p>
+                <p class="text-gray-400 footer-contact">Contact Us:ytsgabcde451@2925.com.</p>
         </div>
     </footer>
 

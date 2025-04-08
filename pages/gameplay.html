@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppleShooter - Gameplay</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <meta name="description" content="AppleShooter is an Apple Shooting Single Player game to play online for free. Games, Single player games, mini-games, apple, shooting">
+    <meta name="keywords" content="Games, Single player games, mini-games, apple, shooting">
+    <title>Gameplay - an Apple Shooting Single Player game to play online for free. Games</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -25,79 +27,96 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gameplay.html" class="active">Gameplay</a></li>
-                <li><a href="leaderboard.html">Leaderboard</a></li>
-                <li><a href="download.html">Download</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="nav-link" data-lang-key="home">Home</a></li>
+                <li><a href="game-intro.html" class="nav-link" data-lang-key="gameIntro">Game Intro</a></li>
+                <li><a href="media.html" class="nav-link" data-lang-key="media">Media</a></li>
+                <li><a href="guide.html" class="nav-link" data-lang-key="guide">Guide</a></li>
+                <li><a href="talk.html" class="nav-link" data-lang-key="talk">Talk</a></li>
+                <li>
+                    <div class="language-selector">
+                        <button class="language-toggle">
+                            <i class="fas fa-globe"></i>
+                            <span class="language-text">EN</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="zh">中文</a>
+                            <a href="#" data-lang="ja">日本語</a>
+                            <a href="#" data-lang="ko">한국어</a>
+                            <a href="#" data-lang="es">Español</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <div class="breadcrumb">
-        <a href="../index.html">Home</a> / <span>Gameplay</span>
+        <a href="../index.html" class="breadcrumb-item" data-lang-key="home">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-item active" data-lang-key="gameplay">Gameplay</span>
     </div>
 
     <main>
         <section class="gameplay-section">
-            <h1>How to Play</h1>
+            <h1 class="howToPlay">How to Play</h1>
             <div class="gameplay-content">
                 <div class="gameplay-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Start the Game</h3>
-                        <p>Click the "Play Now" button to start your AppleShooter adventure. The game will begin with a tutorial level to help you get familiar with the controls.</p>
+                        <h3 class="startGame">Start the Game</h3>
+                        <p class="startGameDesc">Click the "Play Now" button to start your AppleShooter adventure. The game will begin with a tutorial level to help you get familiar with the controls.</p>
                     </div>
                 </div>
                 <div class="gameplay-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Controls</h3>
-                        <p>Use your mouse to aim and click to shoot. The apples will appear at different positions and speeds. Your goal is to hit as many apples as possible.</p>
+                        <h3 class="controls">Controls</h3>
+                        <p class="controlsDesc">Use your mouse to aim and click to shoot. The apples will appear at different positions and speeds. Your goal is to hit as many apples as possible.</p>
                     </div>
                 </div>
                 <div class="gameplay-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Scoring</h3>
-                        <p>Each apple you hit gives you points. The faster you hit the apple, the more points you earn. Special golden apples give bonus points!</p>
+                        <h3 class="scoring">Scoring</h3>
+                        <p class="scoringDesc">Each apple you hit gives you points. The faster you hit the apple, the more points you earn. Special golden apples give bonus points!</p>
                     </div>
                 </div>
                 <div class="gameplay-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Power-ups</h3>
-                        <p>Collect power-ups to enhance your shooting abilities. These include time slowers, multi-shots, and score multipliers.</p>
+                        <h3 class="powerUps">Power-ups</h3>
+                        <p class="powerUpsDesc">Collect power-ups to enhance your shooting abilities. These include time slowers, multi-shots, and score multipliers.</p>
                     </div>
                 </div>
                 <div class="gameplay-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Levels</h3>
-                        <p>Progress through increasingly challenging levels. Each level introduces new obstacles and faster apples to test your skills.</p>
+                        <h3 class="levels">Levels</h3>
+                        <p class="levelsDesc">Progress through increasingly challenging levels. Each level introduces new obstacles and faster apples to test your skills.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="tips-section">
-            <h2>Pro Tips</h2>
+            <h2 class="proTips">Pro Tips</h2>
             <div class="tips-grid">
                 <div class="tip-card">
                     <i class="fas fa-bullseye"></i>
-                    <h3>Aim Ahead</h3>
-                    <p>Anticipate the apple's movement and aim slightly ahead of its current position.</p>
+                    <h3 class="aimAhead">Aim Ahead</h3>
+                    <p class="aimAheadDesc">Anticipate the apple's movement and aim slightly ahead of its current position.</p>
                 </div>
                 <div class="tip-card">
                     <i class="fas fa-clock"></i>
-                    <h3>Timing is Key</h3>
-                    <p>Wait for the perfect moment to shoot for maximum points.</p>
+                    <h3 class="timingIsKey">Timing is Key</h3>
+                    <p class="timingIsKeyDesc">Wait for the perfect moment to shoot for maximum points.</p>
                 </div>
                 <div class="tip-card">
                     <i class="fas fa-star"></i>
-                    <h3>Power-up Strategy</h3>
-                    <p>Save power-ups for difficult levels or when you're going for high scores.</p>
+                    <h3 class="powerUpStrategy">Power-up Strategy</h3>
+                    <p class="powerUpStrategyDesc">Save power-ups for difficult levels or when you're going for high scores.</p>
                 </div>
             </div>
         </section>
@@ -106,10 +125,11 @@
     <footer>
         <div class="footer-content">
             <p class="text-gray-400"><a href="https://beian.miit.gov.cn" rel=nofollow>渝ICP备2025054030号</a>
-                <p class="text-gray-400">Contact Us:961674004@qq.com.</p> 
+                <p class="text-gray-400 footer-contact">Contact Us:961674004@qq.com.</p>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/language-switch.js"></script>
 </body>
 </html> 

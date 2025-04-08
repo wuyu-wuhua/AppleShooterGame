@@ -1,71 +1,87 @@
+/* 讨论页面样式 */
 .talk-section {
-    max-width: 800px;
-    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .game-discussion {
+    color: #4CAF50;
     text-align: center;
     margin-bottom: 2rem;
-    color: #333;
+    font-size: 2rem;
 }
 
+/* 评论表单样式 */
 .comment-form {
-    background: #f8f9fa;
-    padding: 2rem;
+    background-color: #f9f9f9;
     border-radius: 8px;
+    padding: 2rem;
     margin-bottom: 2rem;
+}
+
+.add-comment {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #666;
+    font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-.form-group textarea {
-    min-height: 100px;
-    resize: vertical;
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
 }
 
 .post-comment {
-    background: #007bff;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
 .post-comment:hover {
-    background: #0056b3;
+    background-color: #45a049;
 }
 
+/* 评论列表样式 */
 .comments-section {
-    background: white;
-    padding: 2rem;
+    background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem;
 }
 
 .recent-comments {
-    margin-bottom: 1rem;
     color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .total-comments {
@@ -73,24 +89,28 @@
     margin-bottom: 1.5rem;
 }
 
-.comment {
-    border-bottom: 1px solid #eee;
-    padding: 1rem 0;
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.comment:last-child {
-    border-bottom: none;
+.comment {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .comment-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .comment-username {
-    font-weight: bold;
-    color: #333;
+    font-weight: 500;
+    color: #4CAF50;
 }
 
 .comment-date {
@@ -99,24 +119,24 @@
 }
 
 .comment-content {
-    color: #444;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 .delete-comment {
-    background: #dc3545;
+    background-color: #f44336;
     color: white;
     border: none;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .delete-comment:hover {
-    background: #c82333;
+    background-color: #d32f2f;
 }
 
 /* 响应式设计 */
@@ -124,17 +144,18 @@
     .talk-section {
         padding: 1rem;
     }
-    
+
+    .game-discussion {
+        font-size: 1.5rem;
+    }
+
     .comment-form,
     .comments-section {
         padding: 1rem;
     }
-    
+
     .comment-header {
         flex-direction: column;
-    }
-    
-    .comment-date {
-        margin-top: 0.25rem;
+        gap: 0.5rem;
     }
 } 
