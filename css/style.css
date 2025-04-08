@@ -166,6 +166,11 @@ footer {
     text-align: center;
 }
 
+.footer-content p {
+    color: white;
+    margin: 0.5rem 0;
+}
+
 .footer-content a {
     color: white;
     text-decoration: none;
