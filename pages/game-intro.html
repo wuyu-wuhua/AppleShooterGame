@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AppleShooter is an Apple Shooting Single Player game to play online for free. Games, Single player games, mini-games, apple, shooting">
     <meta name="keywords" content="Games, Single player games, mini-games, apple, shooting">
-    <title>Game Intro - an Apple Shooting Single Player game to play online for free. Games</title>
+    <title>Game Intro - AppleShooter</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -34,17 +34,13 @@
                 <li><a href="talk.html" class="nav-link" data-lang-key="talk">Talk</a></li>
                 <li>
                     <div class="language-selector">
-                        <button class="language-toggle">
+                        <button class="language-btn">
+                            <span class="language-text">English</span>
                             <i class="fas fa-globe"></i>
-                            <span class="language-text">EN</span>
-                            <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="language-dropdown">
-                            <a href="#" data-lang="en">English</a>
-                            <a href="#" data-lang="zh">中文</a>
-                            <a href="#" data-lang="ja">日本語</a>
-                            <a href="#" data-lang="ko">한국어</a>
-                            <a href="#" data-lang="es">Español</a>
+                            <div class="language-option" data-lang="en">English</div>
+                            <div class="language-option" data-lang="zh">中文</div>
                         </div>
                     </div>
                 </li>
@@ -61,33 +57,34 @@
     <main>
         <div class="game-intro-section">
             <section class="game-overview">
-                <h1 class="game-title">AppleShooter - Classic Shooting Game</h1>
+                <h1 class="game-title" data-lang-key="gameTitle">AppleShooter - Classic Shooting Game</h1>
                 <div class="game-description">
-                    <p>AppleShooter is a challenging shooting game where players must use a bow and arrow to precisely shoot apples placed on people's heads. The game tests players' accuracy, patience, and skill, with each shot potentially bringing victory or defeat.</p>
+                    <p data-lang-key="gameDescription">AppleShooter is a challenging shooting game where players must use a bow and arrow to precisely shoot apples placed on people's heads. The game tests players' accuracy, patience, and skill, with each shot potentially bringing victory or defeat.</p>
                 </div>
             </section>
 
             <section class="gameplay">
-                <h2 class="gameplay">Gameplay</h2>
+                <h2 class="section-title" data-lang-key="gameplay">Gameplay</h2>
+
                 <div class="gameplay-details">
                     <div class="gameplay-text">
-                        <h3 class="basicControls">Basic Controls</h3>
+                        <h3 data-lang-key="basicControls" class="basicControls">Basic Controls</h3>
                         <ul>
-                            <li class="basicControlsDesc" data-lang-key="basicControlsDesc">Use the mouse to aim: Move the mouse to adjust the direction of the arrow</li>
+                            <li data-lang-key="basicControlsDesc">Use the mouse to aim: Move the mouse to adjust the direction of the arrow</li>
                             <li data-lang-key="chargeControl">Hold left mouse button: Charge, arrow power increases with hold time</li>
                             <li data-lang-key="fireControl">Release left mouse button: Fire the arrow</li>
                         </ul>
 
-                        <h3 class="gameObjectives">Game Objectives</h3>
+                        <h3 data-lang-key="gameObjectives">Game Objectives</h3>
                         <ul>
-                            <li class="gameObjectivesDesc" data-lang-key="gameObjectivesDesc">Accurately hit the apple, avoid hitting the person</li>
+                            <li data-lang-key="gameObjectivesDesc">Accurately hit the apple, avoid hitting the person</li>
                             <li data-lang-key="levelDifficulty">Each level has different difficulties and challenges</li>
                             <li data-lang-key="highScore">Get high scores through precise shooting</li>
                         </ul>
 
-                        <h3 class="gameFeatures">Game Features</h3>
+                        <h3 data-lang-key="gameFeatures">Game Features</h3>
                         <ul>
-                            <li class="gameFeaturesDesc" data-lang-key="gameFeaturesDesc">Physics engine: Realistic arrow flight trajectory</li>
+                            <li data-lang-key="gameFeaturesDesc">Physics engine: Realistic arrow flight trajectory</li>
                             <li data-lang-key="increasingDifficulty">Increasing difficulty: Gradually increasing game difficulty</li>
                             <li data-lang-key="instantFeedback">Instant feedback: Intuitive hit effects</li>
                         </ul>
@@ -96,20 +93,20 @@
                     <div class="gameplay-images">
                         <div class="screenshot">
                             <img src="../images/gameplay1.jpg" alt="AppleShooter Game Screenshot - Aiming Scene">
-                            <p>Aiming Scene - Precise shooting angle calculation</p>
+                            <p data-lang-key="aimingSceneDesc">Aiming Scene - Precise shooting angle calculation</p>
                         </div>
                         <div class="screenshot">
                             <img src="../images/gameplay2.jpg" alt="AppleShooter Game Screenshot - Hit Effect">
-                            <p>Successful Hit - Arrow precisely hits the apple</p>
+                            <p data-lang-key="hitEffectDesc">Successful Hit - Arrow precisely hits the apple</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="game-history">
-                <h2 class="gameHistory">Game History</h2>
+                <h2 class="section-title" data-lang-key="gameHistory">Game History</h2>
                 <div class="history-content">
-                    <p class="gameHistoryDesc">The inspiration for AppleShooter comes from the Swiss folk legend of William Tell. In the legend, he was forced to shoot an apple placed on his son's head with a bow and arrow, demonstrating amazing archery skills. This story inspired the game development team to transform this thrilling scene into a challenging casual game.</p>
+                    <p data-lang-key="gameHistoryDesc">The inspiration for AppleShooter comes from the Swiss folk legend of William Tell. In the legend, he was forced to shoot an apple placed on his son's head with a bow and arrow, demonstrating amazing archery skills. This story inspired the game development team to transform this thrilling scene into a challenging casual game.</p>
                     
                     <h3 data-lang-key="developmentHistory">Development History</h3>
                     <ul>
@@ -123,10 +120,10 @@
             </section>
 
             <section class="development-team">
-                <h2 class="developmentTeam">Development Team</h2>
+                <h2 class="section-title" data-lang-key="developmentTeam">Development Team</h2>
                 <div class="team-info">
                     <div class="team-description">
-                        <p class="developmentTeamDesc">AppleShooter is created by a passionate game development team. Team members come from all over the world, working together to create fun and challenging gaming experiences.</p>
+                        <p data-lang-key="developmentTeamDesc">AppleShooter is created by a passionate game development team. Team members come from all over the world, working together to create fun and challenging gaming experiences.</p>
                     </div>
                     
                     <div class="team-members">
